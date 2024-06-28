@@ -83,6 +83,14 @@ jobs:
       matrix: ${{ steps.generate-matrix.outputs.matrix }}
       date: ${{ needs.setup-environment.outputs.date }}
     steps:
+      - name: Check Date
+        id: check-date
+        run: |
+          if [ -z "${{ needs.setup-environment.outputs.date }}" ]; then
+            echo "Date is empty, exiting the job."
+            exit 1
+          fi
+
       - name: Generate Matrix
         id: generate-matrix
         run: |
