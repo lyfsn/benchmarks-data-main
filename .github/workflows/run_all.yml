@@ -27,7 +27,7 @@ on:
     - cron: '0 0 * * 1,3,5'
 
 jobs:
-  run_benchmarks:
+  setup-environment:
     runs-on: ubuntu-latest
     env:
       ROOT_DIR: ${{ github.event.inputs.root_dir || '/root/benchmarks/' }}

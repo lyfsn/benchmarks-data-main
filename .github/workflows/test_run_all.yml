@@ -25,7 +25,7 @@ on:
         default: 1
 
 jobs:
-  run_benchmarks:
+  setup-environment:
     runs-on: ubuntu-latest
     env:
       ROOT_DIR: ${{ github.event.inputs.root_dir || '/root/benchmarks/' }}
